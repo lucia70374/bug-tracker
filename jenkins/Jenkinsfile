@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage ('Execute Unit Tests') {
-            parallel {
+        
                 stage ('Unit Tests - Frontend') {
                     agent {
                         docker {
@@ -72,12 +71,7 @@ pipeline {
                         }
                     }
                 }
-            }
-        }
+
+
     }
-    post {
-        always {
-            cleanWs()
-        }
-    }  
 }
