@@ -54,6 +54,8 @@ pipeline {
 
                                 # Generate coverage report
                                 go test -coverprofile coverage.out -covermode=atomic ./...
+
+                                # Write out an HTML file instead of launching a web browser
                                 go tool cover -html coverage.out -o coverage.html
 
                                 mkdir -p reports

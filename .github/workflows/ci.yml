@@ -25,6 +25,8 @@ jobs:
         run: |
 
           go test -json -coverprofile=coverage.out -covermode=atomic ./...
+          
+          # Display coverage percentages to stdout for each function
           go tool cover -func=coverage.out > coverage.txt
 
           echo "## Go Test Coverage Report" >> $GITHUB_STEP_SUMMARY
