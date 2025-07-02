@@ -125,6 +125,7 @@ jobs:
       - name: Launch Application
         run: |
           docker compose up --build -d
+          npm install wait-on
           npx wait-on http://localhost:8080/api/health -t 40000
 
       - name: Execute API Tests
