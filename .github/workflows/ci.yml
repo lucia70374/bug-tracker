@@ -31,7 +31,7 @@ jobs:
 
           echo "## Go Test Coverage Report" >> $GITHUB_STEP_SUMMARY
           echo "```" >> $GITHUB_STEP_SUMMARY
-          cat coverage.txt >> $GITHUB_STEP_SUMMARY
+          echo "Coverage: $(cat coverage.txt)." >> $GITHUB_STEP_SUMMARY
           echo "```" >> $GITHUB_STEP_SUMMARY
 
           go test -v ./... 2>&1 | go-junit-report > test-results.xml
