@@ -126,7 +126,7 @@ jobs:
         run: |
           docker compose up --build -d
           npm install wait-on
-          npx wait-on http://localhost:8080/api/health -t 40000
+          npx wait-on http://localhost:8080/api/health -t 30000
 
       - name: Execute API Tests
         working-directory: ./tests-api
