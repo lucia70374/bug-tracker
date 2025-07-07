@@ -172,14 +172,14 @@ pipeline {
             environment {
                 FLY_API_TOKEN = credentials('FLY_API_TOKEN')
                 FLYCTL_INSTALL = "${env.WORKSPACE.replaceAll(' ', '')}/.fly"
-                PATH = "${env.FLYCTL_INSTALL}/bin:${env.PATH}"
+                PATH = "$FLYCTL_INSTALL/bin:$PATH"
                 HOME = "${WORKSPACE}"
             }
             stages {
                 stage ('Install Flyctl') {
                     steps {
                         sh 'mkdir -p $FLYCTL_INSTALL'
-                        sh 'curl -L https: //fly.io/install.sh | sh'
+                        sh 'curl -L https://fly.io/install.sh | sh'
                         sh 'flyctl version'
                     }
                 }
